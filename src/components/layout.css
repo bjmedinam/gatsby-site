@@ -615,6 +615,26 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
+.demo-category {
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.demo-category-title,
+.demo-category-description {
+  margin: 0px;
+}
+
+.demo-category-description {
+  color: #909090;
+}
+
+.demo-category-title {
+  font-size: 18px;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
