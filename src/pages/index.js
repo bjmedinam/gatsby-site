@@ -23,6 +23,9 @@ export const query = graphql`
       edges {
         node {
           id
+          slug {
+            current
+          }
           title
           description
         }
