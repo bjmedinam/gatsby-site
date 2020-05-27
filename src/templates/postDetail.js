@@ -1,15 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
+import PostDetailView from "../components/views/PostDetailView"
 import { graphql } from "gatsby"
-import PostDetail from "./../components/PostDetail"
 
-const PostsDetailTemplate = ({ data, pageContext, ...otherProps }) => {
+const PostsDetailTemplate = ({ data, pageContext }) => {
   const post = data.sanityPost
-  return (
-    <Layout>
-      <PostDetail {...post} />
-    </Layout>
-  )
+  return <PostDetailView post={post} />
 }
 
 export const query = graphql`

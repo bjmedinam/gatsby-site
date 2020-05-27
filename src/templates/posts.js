@@ -1,17 +1,15 @@
 import React from "react"
-import Layout from "../components/layout"
+import PostsView from "../components/views/PostsView"
 import { graphql } from "gatsby"
-import Post from "./../components/Post"
 
-const PostsTemplate = ({ data, pageContext, ...otherProps }) => {
+const PostsTemplate = ({ data, pageContext }) => {
   const posts = data.allSanityPost.edges
   return (
-    <Layout>
-      <h2>{pageContext.title}</h2>
-      {posts.map(post => (
-        <Post key={post.id} {...post.node} sectionSlug={pageContext.slug} />
-      ))}
-    </Layout>
+    <PostsView
+      title={pageContext.title}
+      posts={posts}
+      slug={pageContext.slug}
+    />
   )
 }
 

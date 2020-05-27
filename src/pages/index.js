@@ -1,20 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Category from "./../components/Category"
+import HomeView from "./../components/views/HomeView"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
   const categories = data.allSanityCategory.edges
-  return (
-    <Layout>
-      <SEO title="Home" />
-      <h2>Nuestras secciones</h2>
-      {categories.map(category => (
-        <Category {...category.node} />
-      ))}
-    </Layout>
-  )
+  return <HomeView categories={categories} />
 }
 
 export const query = graphql`
